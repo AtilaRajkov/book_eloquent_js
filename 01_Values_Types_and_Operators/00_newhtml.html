@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EJS CH01</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/my_style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  
+<div>Variables, Types and Operators</div>
+
+<script>
+  var total = 0;
+  var count = 1;
+  while (count <= 10) {
+    total += count;
+    count++;
+  }
+  console.log(total); // 55
+  
+  // Making a "sum()" function. version 1:
+  var sum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].reduce(add, 0);
+  function add(a, b) {
+    return a + b;
+  }
+  console.log(sum);
+  
+  // Making a "sum()" function. version 2:
+  console.log(
+  [1, 2, 3, 4].reduce((a, b) => a + b, 0)
+  );
+  
+  
+ // Making a "range()" function:
+ function range(start, end) {
+   var ans = [];
+   for (let i = start; i <= end; i++) {
+     ans.push(i);
+   }
+   return ans;
+ }
+ 
+ 
+
+</script>
+</html>
