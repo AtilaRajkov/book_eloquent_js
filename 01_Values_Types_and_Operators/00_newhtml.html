@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EJS CH01</title>
+  <title>EJS CH00</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../css/my_style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
   
-<div>Variables, Types and Operators</div>
+<!--<div>Variables, Types and Operators</div>-->
 
 <script>
   var total = 0;
@@ -41,7 +41,33 @@
    return ans;
  }
  
+ var newArray = range(1, 6);
+ console.log(newArray);
  
-
+ // "range()" with recursion:
+function rangeRecursive(start, end) {
+   if (start === end) {
+     return [start];
+   }
+   return [start, ...range(start + 1, end)];
+ }
+ 
+ var newArrayRecursive = rangeRecursive(4, 9);
+ console.log(newArrayRecursive);
+ 
+ // *** Typographic conventions:
+ 
+ // Factoriel:
+ function fac(n) {
+   if (n === 0) {
+     return 1;
+   } else {
+     return fac(n - 1) * n;
+   }
+ }
+ console.log(fac(8)); //  40320
+ 
+ 
+ 
 </script>
 </html>
