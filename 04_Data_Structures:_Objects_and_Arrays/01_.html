@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eloquent JavaScript</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h1>04 Data Structures: Objects and Arrays</h1>
+
+<script>
+
+    //** Data Sets **//
+
+    let listOfNumbers = [2, 3, 5, 7, 11];
+    console.log(listOfNumbers[2]);
+    console.log(listOfNumbers[2 - 1]);
+
+    //** Properties **//
+
+    console.log(listOfNumbers.length);
+    console.log(listOfNumbers["length"]);
+
+    //** Methods **//
+
+    let doh = "Doh";
+    console.log(typeof doh.toUpperCase); // -> function
+    console.log(doh.toUpperCase());
+
+    let sequence = [1, 2, 3];
+    sequence.push(4);
+    sequence.push(5);
+    console.log(sequence);
+
+    //** Objects **//
+
+    let day1 = {
+        squirrel: false,
+        events: ['work', 'touched tree', 'pizza', 'running']
+    };
+    console.log(day1.squirrel); // -> false
+    console.log(day1.wolf); // -> undefined
+
+
+</script>
+
+</body>
+</html>
