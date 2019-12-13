@@ -14,6 +14,14 @@
 
     <ol>
         <li>Numbers</li>
+        <li>Strings</li>
+        <li>Unary Operators</li>
+        <li>Boolean Values</li>
+        <li>Logical Operators</li>
+        <li>Empty Values</li>
+        <li>Automatic Type Conversion</li>
+        <li>Short-Circuiting of Logical Operators</li>
+
     </ol>
 
     <script>
@@ -50,13 +58,79 @@
             //  "Lie ont he ocean"
             //  'Float on the ocean'
 
+            // \n - Newline
+            // \t - Tab
 
-        //// Page 14
+        console.log("This is the first line\nAnd this is the second");
+
+        console.log("A newline character is written like \"\\n\".");
+
+        console.log("Con" + "cat" + "e" + "nate");
+
+            // Backtick-quoted strings (Template Literals)
+
+        console.log(`Half of 100 is ${100 / 2}.`);
 
 
+        /// UNARY OPERATORS ///
+
+            // Operators that use two values are called binary operators,
+            // while those that take only one are called UNARY operators.
+
+        console.log(typeof 4.5);
+        console.log(typeof "x");
+
+            // The minus operator can be used both as binary and as unary operator.
+        console.log(-(10 - 2));
 
 
+        /// BOOLEAN VALUES ///
 
+        console.log(3 > 2); // true
+        console.log(3 < 2); // false
+        console.log("Aardvark" < "Zoroaster"); // true
+        console.log("Itchy" != "Stratchy"); // true
+        console.log("Apple" == "Orange"); // false
+
+        console.log(NaN == NaN); // false
+
+
+        /// LOGICAL OPERATORS ///
+
+        console.log(true && false); // false
+        console.log(true && true); // true
+        console.log(1 + 1 == 2 && 10 * 10 > 50); // true
+
+            // Ternary Operator - Conditional Operator
+
+        console.log(true ? 1 : 2.); // 1
+        console.log(false ? 1 : 2); // 2
+
+
+        /// EMPTY VALUES
+
+            // null
+            // undefined
+
+
+        /// AUTOMATIC TYPE CONVERSION //
+
+        console.log(8 * null); // 0
+        console.log("5" - 1); // 4
+        console.log("5" + 1); // "51"
+        console.log("five" * 2); // NaN
+        console.log(false == 0); // true
+
+        console.log(null == undefined); // true
+        console.log(null == 0); // false
+
+
+            /// SHORT-CIRCUITING OF LOGICAL OPERATORS ///
+
+        console.log(null || "user"); // "user"
+        console.log("Agnes" || "user"); // "Agnes"
+
+                // 0, NaN, and the empty string("") count as false
 
 
 

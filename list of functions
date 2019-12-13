@@ -1,1 +1,8 @@
 console.log()
+typeof
+prompt()
+Math.max()
+Math.min()
+Number()
+String()
+Boolean()

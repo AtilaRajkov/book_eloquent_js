@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eloquent JavaScript</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h1>02 - Program Structure</h1>
+
+<ol>
+    <li>Bindings</li>
+    <li>Functions</li>
+    <li>Control Flow</li>
+</ol>
+
+<p><b>A fragment of code that produces a value is called an expression.</b></p>
+
+<script>
+
+        /// BINDINGS ///
+
+    let caught = 5 * 5;
+    console.log(caught);
+
+    let ten = 10;
+    console.log(ten * ten); // 100
+
+    let mood = "light";
+    console.log(mood);
+    mood = "dark";
+    console.log(mood);
+
+    let one = 1; two = 2;
+    console.log(one + two);
+
+    var name = "Ayda";          // var  pre-2015 JavaScript
+    const greeting = "Hello ";
+    console.log(greeting + name);
+
+
+        /// Functions ///
+
+    // let thePrompt = prompt("How old are you?");
+    //     console.log(thePrompt);
+
+        console.log(Math.max(2, 4));
+        console.log(Math.min(2, 4) + 100);
+
+
+        /// CONTROL FLOW ///
+
+    let theNumber = Number(prompt("Pick a number"));
+        console.log("Your number is the square root of " + theNumber * theNumber);
+
+
+
+</script>
+
+</body>
+</html>
