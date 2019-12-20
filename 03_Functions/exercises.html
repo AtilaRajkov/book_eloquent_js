@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function Exercises</title>
+</head>
+<body>
+
+<h3>Functions - Exercise</h3>
+
+
+<script>
+
+        /// Minimum ///
+
+    function minimum(a, b) {
+        if (a < b) return a;
+        return b;
+    }
+
+    // const minimum = (a, b) => {
+    //     if (a < b) return a;
+    //     return b;
+    // };
+
+    // console.log(minimum(3, 3));
+
+
+
+        /// Recursion - Even or Odd ///
+
+    // const isEven = (n) => {
+    //     if (n == 0) {
+    //         return true;
+    //     } else if (n == 1) {
+    //         return false;
+    //     }
+    //     return isEven(n - 2);
+    // };
+    // console.log(isEven(75));
+
+
+    // const isEven_2 = (n) => {
+    //     if (n < 0) n = -n;
+    //     if (n == 0) return true;
+    //     if (n == 1) return false;
+    //     return isEven_2(n -2);
+    // };
+    // console.log(isEven_2(-42));
+
+
+
+        /// Bean Counting ///
+
+    function countBs(word) {
+        counter = 0;  // Mistake?
+        for (let i = 0; i < word.length; i++) {
+            if (word[i] === "B") counter++;
+        }
+        return counter;
+    }
+    console.log(countBs("fiigigigiiiiBiB"));  // 2
+
+
+
+    const countChar = (word, Char) => {
+        counter = 0;
+        for (let i = 0; i < word.lenght; i++) {
+            if (word[i] === Char) counter++;
+        }
+        return counter;
+    };
+    console.log(countChar("CkksksCkdfjCCC", "k"));
+
+
+    function countChar_2(word, Char) {
+        let count = 0;
+        for (let j = 0; j < word.length; j++) {
+            if (word[j] === Char) {
+                count++;
+            }
+        }
+        return count;
+    }
+    console.log(countChar_2("AAAkjjAdaAkAA", "A"));
+
+
+</script>
+
+</body>
+</html>

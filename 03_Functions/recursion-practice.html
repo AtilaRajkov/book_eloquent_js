@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion</title>
+</head>
+<body>
+
+
+<script>
+
+    /// By starting from the number 1 and repeatedly either adding 5 or multiplying by 3
+    /// an infinite set of number can be produced.
+
+    function findSolution(target, history = "") {
+        if (target == 1) {
+            history = history.split("").reverse().join("");
+            return "1 " + history;
+        }
+        if (target % 3 == 0) {
+            history+=" 3 *";
+            return findSolution(target / 3, history);
+        }
+        history+=" 5 +";
+        return findSolution(target - 5, history);
+    }
+    console.log(findSolution(15));
+
+    // function findSolution(target) {
+    //     function find(current, history) {
+    //         if (current == target) {
+    //             return history;
+    //         } else if (current > target) {
+    //             return null;
+    //         } else {
+    //             return find(current + 5, `(${history} + 5)`) ||
+    //                 find(current * 3, `(${history} * 3)`);
+    //         }
+    //     }
+    //     return find(1, "1");
+    // }
+    // console.log(findSolution(24));
+
+    // function testRecursion(target, counter = 0) {
+    //     if (target == 1) {
+    //         return counter;
+    //     }
+    //     if (target % 2 == 0) {
+    //         counter++;
+    //         return testRecursion(target / 2, counter);
+    //     }
+    // }
+    // console.log(testRecursion(8));
+
+
+</script>
+
+</body>
+</html>

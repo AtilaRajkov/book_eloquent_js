@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercises</title>
+</head>
+<body>
+
+<h1>Chapter 2 - Exercises:</h1>
+
+
+<script>
+
+    /* 1
+    Write a loop that makes a seven calls to console.log to output the following
+    triangle
+    #
+    ##
+    ###
+    ####
+    #####
+    ######
+    #######
+     */
+
+    // let shape = "";
+    // for (let i = 0; i < 7; i++) {
+    //     shape+="#";
+    //     console.log(shape);
+    // }
+
+
+    /* 2
+        FizzBuzz
+     */
+
+    // for (let i = 1; i <= 100; i++) {
+    //     if (i % 15 === 0) {
+    //         console.log("FizzBuzz");
+    //     } else if (i % 3 === 0) {
+    //         console.log("Fizz");
+    //     } else if (i % 5 === 0) {
+    //         console.log("Buzz");
+    //     } else {
+    //         console.log(i);
+    //     }
+    // }
+
+
+
+    /* 3
+        Chessboard
+    */
+    // let square = "";
+    // let k = 1;
+    // for (let i = 1; i <= 64; i++) {
+    //    if (
+    //        (i % 2 != 0) && (k % 2 != 0) ||
+    //        (i % 2 == 0) && (k % 2 == 0)
+    //    ) {
+    //        square += " ";
+    //    }
+    //    if (
+    //        (i % 2 == 0) && (k % 2 != 0) ||
+    //        (i % 2 != 0) && (k % 2 == 0)
+    //    ) {
+    //        square += "#";
+    //    }
+    //    if ((i >= 8) && (i % 8 == 0)) {
+    //        square += "\n";
+    //        k++;
+    //    }
+    //
+    // }
+    // console.log(square);
+
+    // UPGRADE //
+
+
+    drawChessBoard = function (size) {
+        let board = "";
+        for (let i = 0; i < size; i ++) {
+            for (let k = 0; k < size; k++) {
+                if (
+                   (i % 2 != 0) && (k % 2 != 0) ||
+                   (i % 2 == 0) && (k % 2 == 0)
+                   ) {
+                    board += " ";
+                }
+                if (
+                   (i % 2 == 0) && (k % 2 != 0) ||
+                   (i % 2 != 0) && (k % 2 == 0)
+                ) {
+                   board += "#";
+                }
+
+            }
+            board += "\n";
+        }
+        console.log(board);
+    };
+
+    drawChessBoard(27);
+
+
+</script>
+
+
+</body>
+</html>

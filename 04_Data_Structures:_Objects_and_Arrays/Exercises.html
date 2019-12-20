@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eloquent JavaScript</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="journal.js"></script>
+
+</head>
+<body>
+
+<h1>04 - Data Structures: Objects and Arrays</h1>
+<h2>Exercises</h2>
+
+
+<script>
+
+
+        /// 1, The Sum of a Range
+
+    function range(start, end) {
+        let rangeArray = [];
+        let k = 0;
+        for (let i = start; i <= end; i++) {
+            rangeArray[k] = i;
+            k++;
+        }
+        return rangeArray;
+    }
+    // console.log(range(1, 10));
+
+    function sum(theArray) {
+        let theSum = 0;
+        for (let element of theArray) {
+            theSum += element;
+        }
+        return theSum;
+    }
+    // console.log(sum(range(1, 10)));
+
+    function range_2(start, end, step = 1) {
+        let rangeArray = [];
+        let k = 0;
+        if (step > 0) {
+            for (let i = start; i <= end; i = i + step) {
+                rangeArray[k] = i;
+                k++;
+            }
+        } else {
+            step = Math.abs(step);
+            for (let i = start; i >= end; i = i - step) {
+                rangeArray[k] = i;
+                k++;
+            }
+        }
+
+        return rangeArray;
+    }
+
+    // console.log(range_2(5, 2, -1));
+    // console.log(sum(range_2(1, 100, 3)));
+
+
+
+        /// 2. Reversing an Array
+
+    function reverseArray(array) {
+        newArray = [];
+        for (let element of array ) {
+            newArray.unshift(element);
+        }
+        return newArray;
+    }
+    // console.log(reverseArray([1, 2, 3, 4]));
+
+    function reverseArrayInPlace(array) {
+        let element;
+        for (let i = 0; i < array.length; i++) {
+            
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

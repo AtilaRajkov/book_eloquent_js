@@ -1,8 +1,75 @@
 console.log()
 typeof
 prompt()
+
+
+/// ********************* Booleans ********************************************************************************
+Boolean()
+
+
+
+/// ********************* Numbers ********************************************************************************
+Number()
 Math.max()
 Math.min()
-Number()
+Math.sqrt()
+Math.PI()
+Math.random()
+Math.floor()
+Math.ceil()
+Math.round()
+Math.abs()
+
+
+Number.isNaN()
+
+
+
+
+/// ********************* Strings ********************************************************************************
 String()
-Boolean()
+"abc".length
+"string"[N]
+"string".toUpperCase()
+"string".toLowerCase()
+"string".includes("char")
+"string".slice()
+"string".indexOf()
+"string".trim()
+"string".padStart()
+sentence.split(" ")
+words.join(". ")
+"LA".repeat(3)
+
+
+
+
+
+
+/// ********************* Arrays ********************************************************************************
+listOfNumbers[2]
+array.length  <=> array["length"]
+array.includes(member)
+
+array.push()
+array.pop()
+array.unshift()
+array.shift()
+
+array.indexOf()
+array.lastIndexOf()
+array1.concat(array2)
+
+
+
+
+/// ********************* Objects ********************************************************************************
+
+delete anObject.left;
+"left" in anObject         // true/false
+Object.keys(anObjectName)               // ["squirrel", "events", "wolf"]
+Object.assign(objectA, {b: 3, c: 4});
+
+
+
+

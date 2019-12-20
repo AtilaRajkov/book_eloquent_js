@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eloquent JavaScript</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="journal.js"></script>
+
+</head>
+<body>
+
+<h1>04 - Data Structures: Objects and Arrays</h1>
+
+<ol>
+    <li>The Weresquirrel</li>
+    <li>Data Sets</li>
+    <li>Properties</li>
+    <li>Methods</li>
+    <li>Objects</li>
+    <li>Mutability</li>
+    <li>Lycanthrope's Log</li>
+    <li>Array Loops</li>
+    <li>The Final Analysis</li>
+    <li>Further Arrayology</li>
+    <li>Strings and their Properties</li>
+    <li>REST Parameters</li>
+    <li>JSON</li>
+
+</ol>
+
+<script src="./journal.js"></script>
+
+
+<script>
+
+        /// The Weresquirrel ///
+
+        /// DATA SETS ///
+
+    /// ARRAYS ///
+
+    let listOfNumbers = [2, 3, 5, 7, 11];
+        console.log(listOfNumbers[2]); // 5
+        console.log(listOfNumbers[0]); // 2
+        console.log(listOfNumbers[2 - 1]); // 3
+
+
+        /// PROPERTIES ///
+
+        console.log("null".length);
+
+
+
+        /// METHODS ///
+
+    let doh = "Doh";
+        console.log(typeof doh.toUpperCase); // function
+        console.log(doh.toUpperCase()); // "DOH"
+
+    let sequence = [1, 2, 3];
+    sequence.push(4);
+    sequence.push(5);
+        console.log(sequence);
+        console.log(sequence.pop());
+        console.log(sequence);
+
+
+
+        /// OBJECTS ///
+
+    let day1 = {
+        squirrel: false,
+        events: ["work", "touched tree", "running"]
+    };
+        console.log(day1.squirrel);
+        console.log(day1.wolf);
+        day1.wolf = false;
+        console.log(day1.wolf);
+
+    let descriptions = {
+        work: "Went to work",
+        "touched tree": "Touched a tree"
+    };
+
+    let anObject = { left: 1, right: 2 };
+        console.log(anObject.left); // 1
+    delete anObject.left;
+        console.log(anObject.left); // undefined
+        console.log("left" in anObject); // false
+        console.log("right" in anObject); // true
+
+        console.log(Object.keys(day1));
+
+
+    let objectA = {a: 1, b: 2};
+    Object.assign(objectA, {b: 3, c: 4});
+            console.log(objectA);
+
+
+    // let journal = [
+    //     {events: ["work", "touched tree", "pizza",
+    //               "running", "television"],
+    //     squirrel: false},
+    //     {events: ["work", "ice cream", "cauliflower",
+    //               "lasagna", "touched tree", "brushed teeth"],
+    //     squirrel: false},
+    //     {events: ["weekend", " cycling", "break", "peanuts"],
+    //     squirrel: true},
+    //     /* and so on... */
+    // ];
+
+
+
+        /// MUTABILITY ///
+
+    let object1 = {value: 10};
+    let object2 = object1;
+    let object3 = {value: 10};
+        console.log(object1 == object2); // true
+        console.log(object1 == object3); // false
+    object1.value = 15;
+        console.log(object2.value); // 15
+        console.log(object3.value); // 10
+
+    const score = {visitors: 0, home: 0};
+    // This is okay
+    score.visitors = 1;
+    // This isn't allowed
+    // score = {visitors: 1, home: 1};
+
+
+
+        /// The Lycanthrope's Log ///
+
+    let journal = [];
+
+    function addEntry(events, squirrel) {
+        journal.push({events, squirrel});
+    }
+
+    addEntry(
+        [
+            "work",
+            "touched tree",
+            "pizza",
+            "running",
+            "television"
+        ],
+        false);
+    addEntry(["work", "ice cream", "cauliflower", "lasagna",
+              "touched tree", "brushed teeth"], false);
+    addEntry(["weekend", "cycling", "break", "peanuts",
+              "beer"], true);
+
+    /// Computing Correlation ///
+
+    function phi(table) {
+        return (table[3] * table[0] - table[2] * table[1]) /
+            Math.sqrt((table[2] + table[3]) *
+                      (table[0] + table[1]) *
+                      (table[1] + table[3]) *
+                      (table[0] + table[2]));
+    }
+    // console.log(phi([76, 9, 4, 1]));
+
+    function tableFor(event, journal) {
+        let table = [0, 0, 0, 0];
+        for (let i = 0; i < journal.length; i++) {
+            let entry = journal[i];
+            let index = 0;
+            if (entry.events.includes(event)) {
+                index += 1;
+            }
+            if (entry.squirrel) {
+                index += 2;
+            }
+            table[index] += 1;
+        }
+        return table;
+    }
+
+
+    console.log(tableFor("peanuts", JOURNAL));
+
+    console.log(phi(tableFor("peanuts", JOURNAL)));
+
+
+        /// ARRAY LOOPS ///
+
+
+    // // Classical JavaScript
+    // for (let i = 0; i < JOURNAL.length; i++) {
+    //     let entry = JOURNAL[i];
+    //     // Do something with entry
+    // }
+    //
+    // // Modern JavaScript
+    // for (let entry of JOURNAL) {
+    //     console.log(`${entry.events.length} events`);
+    // }
+
+
+        /// THE FINAL ANALYSIS ///
+
+    function journalEvents(journal) {
+        let events = [];
+        for (let entry of journal) {
+            for (let event of entry.events) {
+                if (!events.includes(event)) {
+                    events.push(event);
+                }
+            }
+        }
+        return events;
+    }
+    // console.log(journalEvents(JOURNAL));
+
+
+    // for (let event of journalEvents(JOURNAL)) {
+    //     console.log(event + ":", phi(tableFor(event, JOURNAL)));
+    // }
+
+
+    for (let event of journalEvents(JOURNAL)) {
+        let correlation = phi(tableFor(event, JOURNAL));
+        if (correlation > 0.1 || correlation < -0.1) {
+            console.log(event + ":", correlation);
+        }
+    }
+
+    for (let entry of JOURNAL) {
+        if (entry.events.includes("peanuts") &&
+            !entry.events.includes("brushed teeth")) {
+            entry.events.push("peanut teeth")
+        }
+    }
+    console.log(phi(tableFor("peanut teeth", JOURNAL)));
+        // console.log(JOURNAL);
+
+
+
+        /// FURTHER ARRAYOLOGY ///
+
+    let toDoList = [];
+    function remember(task) {
+
+    }
+    function getTask() {
+        return toDoList.shift();
+    }
+    function  rememberUrgently(task) {
+        toDoList.unshift(task);
+    }
+
+    console.log([1, 2, 3, 2, 1].indexOf(2));
+    console.log([1, 2, 3, 2, 1].lastIndexOf(2));
+
+    console.log([0, 1, 2, 3, 4].slice(2, 4)); // [2, 3]
+    console.log([0, 1, 2, 3, 4].slice(2)); // [2, 3, 4]
+
+    console.log([1, 2, 3].concat([4, 5, 6]));
+
+    function remove(array, index) {
+        return array.slice(0, index)
+            .concat(array.slice(index + 1));
+    }
+    console.log(remove(["a", "b", "c", "d", "e"], 2)); // ["a", "b", "d", "e"]
+
+
+        /// STRINGS AND THEIR PROPERTIES ///
+
+    console.log("coconut".slice(4, 7)); // nut
+    console.log("coconut".indexOf("u")); // 5
+
+    console.log("one two three".indexOf("ee")); // 11
+
+    console.log(" okay \n ".trim());
+
+    console.log(String(6).padStart(3, "0")); // 006
+
+    let sentence = "Secretarybirds specialize in stomping";
+    let words = sentence.split(" ");
+    console.log(words); // ["Secretarybirds", "specialize", "in", "stomping"]
+    console.log(words.join(". "));
+        console.log("LA".repeat(3));
+
+    let string = "abc";
+        console.log(string.length); // 3
+        console.log(string[1]); // "b"
+
+
+
+        /// REST PARAMETERS ///
+
+    function max(...numbers) {
+        let result = -Infinity;
+        for (let number of numbers) {
+            if (number > result) result = number;
+        }
+        return result;
+    }
+    // console.log(max(4, 1, 9, -2));
+
+    let numbers = [5, 1, 7];
+    // console.log(max(...numbers));
+
+    console.log(max(9, ...numbers, 2));
+
+    let words_2 = ['never', 'fully'];
+    console.log(['will', ...words_2, 'understand']);
+
+
+
+        /// THE MATH OBJECT ///
+
+    function randomPointOnCircle(radius) {
+        let angle = Math.random() * 2 * Math.PI;
+        return {x: radius * Math.cos(angle),
+                y: radius * Math.sin(angle)};
+    }
+    console.log(randomPointOnCircle(2));
+
+    console.log(Math.floor((Math.random() * 10) + 1));
+
+
+
+        /// JSON ///
+
+    let string_1 = JSON.stringify({squirrel: false,
+                                 events: ["weekend"]});
+        console.log(string_1);
+        console.log(JSON.parse(string_1).events);
+
+
+</script>
+
+</body>
+</html>
