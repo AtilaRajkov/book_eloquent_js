@@ -77,11 +77,193 @@
     // console.log(reverseArray([1, 2, 3, 4]));
 
     function reverseArrayInPlace(array) {
-        let element;
+        let placeHolder;
         for (let i = 0; i < array.length; i++) {
-            
+            placeHolder = Number(array.splice(i, 1));
+            // console.log(placeHolder);
+            array.unshift(placeHolder);
+        }
+        return array;
+    }
+    // console.log(reverseArrayInPlace([1, 2, 3]));
+
+
+
+        /// 3. A List
+
+    // let list = {
+    //     value: 1,
+    //     rest: {
+    //         value: 2,
+    //         rest: {
+    //             value: 3,
+    //             rest: null
+    //         }
+    //     }
+    // };
+
+    let array = [1, 2, 3];
+
+    function arrayToList(array) {
+        let list = {};
+        let newObject = list.rest;
+        for (let element of array) {
+
+            if (!newObject) {
+                newObject = list;
+            } else {
+                newObject = newObject.rest;
+            }
+
+            Object.assign(newObject, {
+                value: element,
+                rest: {}
+            });
+        }
+        return list;
+    }
+    // console.log(arrayToList([1, 2, 3, 4]));
+
+
+    function listToArray(list) {
+
+        let array = [];
+        let newList = list;
+
+        while (newList !== null) {
+            array.push(newList.value);
+            newList = newList.rest;
+        }
+        return array;
+    }
+    // console.log(listToArray(list));
+
+
+    function prepend(element, list) {
+        return  {
+            value: element,
+            rest: list
+        };
+    }
+    // console.log(prepend(0, list));
+
+
+
+    function nth(list, number) {
+        let array = [];
+        let newList = list;
+
+        while (newList !== null) {
+            array.push(newList.value);
+            newList = newList.rest;
+        }
+        return array[number];
+    }
+    // console.log(nth(list, 0));
+
+
+    function nth_2(list, number) {
+        let newList = list;
+        let counter = 0;
+        while (newList !== null) {
+            if (counter === number) {
+                return newList.value;
+            }
+            newList = newList.rest;
+            counter++;
         }
     }
+    // console.log(nth_2(list, 2));
+
+
+    function nth_recursive(list, number) {
+        // let newList = list;
+        if (number === 0) {
+            return list.value;
+        } else {
+           nth_recursive(list.rest, number - 1);
+        }
+    }
+    // console.log(nth_recursive(list, 2));
+
+
+    let list = {
+        value: 1,
+        rest: {
+            value: 2,
+            rest: {
+                value: 3,
+                rest: null
+            }
+        }
+    };
+
+    function nth_recursive_2(list, number) {
+        function find(theList, counter) {
+            if (counter === number) {
+                return theList.value;
+            } else {
+                return find(theList.rest, counter + 1);
+            }
+        }
+        return find(list, 0);
+    }
+    // console.log(nth_recursive_2(list, 2));
+
+
+
+        /// 4. Deep Comparison ///
+
+        // console.log(typeof null);
+
+        let obj1 = {
+            one: 1,
+            two: "two"
+        };
+
+        let obj2 = {
+            one: 1,
+            two: "two"
+        };
+
+        function deepEqual(value1, value2) {
+
+            if (typeof value1 === typeof value2) {
+
+                if (typeof value1 === "object") {
+
+                    // return deepEqual(Object.keys(value1), Object.keys(value2));
+
+                    console.log("here!");
+
+                    console.log(Object.keys(value1));
+                    console.log(Object.keys(value2));
+
+                    if (Object.keys(value1) == Object.keys(value2)) {
+                        console.log("here 3!");
+                        return "The Properties of the object are equal!";
+                    }
+                    console.log("here 2!");
+
+                }
+
+                // if ( typeof value1 === array) {
+                //     return "Array!";
+                // }
+
+                if (value1 === value2) {
+                    return true;
+                }
+
+            } else {
+                return false;
+            }
+
+        }
+
+        console.log(deepEqual(obj1, obj2));
+        // console.log(deepEqual("2", "2"));
+        // console.log(deepEqual("2", 2));
 
 
 </script>
