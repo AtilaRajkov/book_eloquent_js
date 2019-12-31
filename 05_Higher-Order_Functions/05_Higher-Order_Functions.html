@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eloquent JavaScript</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+<h1>05 - Higher-Order Functions</h1>
+
+<ol>
+    <li>Abstraction</li>
+    <li>Abstracting Repetition</li>
+    <li>Higher-Order Functions</li>
+    <li>Script Data Set</li>
+    <li>Filtering Arrays</li>
+    <li>Transforming with Map</li>
+    <li>Summarizing with Reduce</li>
+    <li>Composability</li>
+</ol>
+
+<script src="./scripts.js"></script>
+
+<script>
+
+    // let total = 0, count = 1;
+    // while (count <= 10) {
+    //     total += count;
+    //     count += 1;
+    // }
+    // console.log(total);
+
+
+        /// ABSTRACTION ///
+
+        /// ABSTRACTING REPETITION ///
+
+    for (let i = 0; i < 10; i++) {
+        // console.log(i);
+    }
+
+
+    // function repeat(n) {
+    //     for (let i = 0; i < n; i ++) {
+    //         console.log(i);
+    //     }
+    // }
+    // repeat(4);
+
+
+    function repeat(n, action) {
+        for (let i = 0; i < n; i++) {
+            action(i);
+        }
+    }
+    // repeat(3, console.log);
+
+    let labels = [];
+    repeat(5, i => {
+        labels.push(`Unit ${i + 1}`);
+    });
+    // console.log(labels);
+
+
+
+        /// Higher-Order Functions ///
+
+    //  Functions that operate on other functions, either by taking them as arguments
+    // or by returning them, are called higher-order functions.
+
+    function greaterThan(n) {
+        return m => m > n;
+    }
+    let greaterThan10 = greaterThan(10);
+    // console.log(greaterThan10(11));
+
+
+    // And we can have functions that change other functions:
+    function noisy(f) {
+        return (...args) => {
+            console.log("calling with", args);
+            let result = f(...args);
+            console.log("Called with", args, ", returned", result);
+            return result;
+        };
+    }
+    noisy(Math.min)(3, 2, 1);
+    //  calling with [3, 2, 1]
+    //  called with [3, 2, 1] , returned 1
+
+
+    // We can even write functions that provide new types of control flow:
+    function unless(test, then) {
+        if (!test) then();
+    }
+
+    repeat(3, n => {
+        unless(n % 2 === 1, () => {
+            console.log(n, " is even");
+        });
+    });
+
+
+    ["A", "B", "C"].forEach(l => console.log(l));
+
+
+
+        /// SCRIPT DATA SET ///
+
+        /// FILTERING ARRAYS ///
+
+    function filter(array, test) {
+        let passed = [];
+        for (let element of array) {
+            if (test(element)) {
+                passed.push(element);
+            }
+        }
+        return passed;
+    }
+
+    // console.log(filter(SCRIPTS, scripts => scripts.living));
+
+    console.log(filter(SCRIPTS, function (scripts) {
+        return scripts.living;
+    }));
+
+
+    console.log(SCRIPTS.filter(s => s.direction === "ttb"));
+
+
+
+        /// TRANSFORMING WITH MAP ///
+
+    function map(array, transform) {
+        let mapped = [];
+        for (let element of array) {
+            mapped.push(transform(element));
+        }
+        return mapped;
+    }
+    let rtlScripts = SCRIPTS.filter(s => s.direction === "rtl");
+    console.log(map(rtlScripts, s => s.name));
+
+    console.log(rtlScripts.map(s => s.name));
+
+
+
+        /// SUMMARIZING WITH REDUCE (FOLD) ///
+
+
+    // function reduce(array, combine, start) {
+    //     let current = start;
+    //     for (let element of array) {
+    //         current = combine(current, element);
+    //     }
+    //     return current;
+    // }
+
+    // console.log(reduce([1, 2, 3], (a, b) => a + b, 0));
+    //
+    // console.log([1, 2, 3, 4].reduce((a, b) => a + b));
+
+    /// Using .reduce() twice:
+    function characterCount(script) {
+        return script.ranges.reduce((count, [from, to]) => {
+            return count + (to - from);
+        }, 0);
+    }
+
+    // console.log(SCRIPTS.reduce((a, b) => {
+    //     return characterCount(a) < characterCount(b) ? b : a;
+    // }));
+
+
+
+        /// COMPOSABILITY ///
+
+    let biggest = null;
+    for (let script of SCRIPTS) {
+        if (biggest === null ||
+            characterCount(biggest) < characterCount(script)) {
+            biggest = script;
+        }
+    }
+    // console.log(biggest);
+
+
+    function average(array) {
+        return array.reduce((a, b) => a + b) / array.length;
+    }
+
+    console.log(Math.round(average(
+        SCRIPTS.filter(s => s.living).map(s => s.year)
+    )));
+
+    console.log(Math.round(average(
+        SCRIPTS.filter(s => !s.living).map(s => s.year)
+    )));
+
+
+    let total = 0, count = 0;
+    for (let script of SCRIPTS) {
+        if (script.living) {
+            total += script.year;
+            count += 1;
+        }
+    }
+    // console.log(Math.round(total / count));
+
+
+
+        /// STRINGS AND CHARACTER CODES ///
+
+
+    function characterScript(code) {
+        for (let script of SCRIPTS) {
+            if (script.ranges.some(([from, to]) => {
+                return code >= from && code < to;
+            })) {
+                return script;
+            }
+        }
+        return null;
+    }
+    // console.log(characterScript(121));
+
+    let roseDragon = "😀☹👹️";
+    for (let char of roseDragon) {
+        console.log(char);
+    }
+
+
+
+        /// RECOGNIZING TEXT ///
+
+    function countBy(item, groupName) {
+        let counts = [];
+        for (let item of items) {
+            let name = groupName(item);
+
+        }
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

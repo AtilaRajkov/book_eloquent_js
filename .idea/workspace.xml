@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09be95a5-edd9-4830-ba21-15760e8ebdc3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/05_Higher-Order_Functions/05_Higher-Order_Functions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_Higher-Order_Functions/scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/Exercises.html" beforeDir="false" afterPath="$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/Exercises.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/list of functions" beforeDir="false" afterPath="$PROJECT_DIR$/list of functions" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,44 +24,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/list of functions">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state relative-caret-position="1512">
+              <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/Chapter_4_Data_Structures:_Objects_and_Arrays.html">
+        <entry file="file://$PROJECT_DIR$/05_Higher-Order_Functions/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-96">
-              <caret line="245" lean-forward="true" selection-start-line="245" selection-end-line="245" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/03_Functions/03_functions.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="192" column="3" lean-forward="true" selection-start-line="192" selection-start-column="3" selection-end-line="202" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/03_Functions/exercises.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+            <state relative-caret-position="9036">
+              <caret line="502" column="25" selection-start-line="502" selection-start-column="25" selection-end-line="502" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/Exercises.html">
+        <entry file="file://$PROJECT_DIR$/05_Higher-Order_Functions/05_Higher-Order_Functions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="238" column="46" selection-start-line="238" selection-start-column="46" selection-end-line="238" selection-end-column="46" />
+            <state relative-caret-position="400">
+              <caret line="232" column="28" lean-forward="true" selection-start-line="232" selection-start-column="28" selection-end-line="232" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -69,6 +54,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -78,6 +64,9 @@
       <find>true</find>
       <find>Closure</find>
       <find>CLOSURE</find>
+      <find>Cop</find>
+      <find>some</find>
+      <find>Latin</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
@@ -100,9 +89,11 @@
         <option value="$PROJECT_DIR$/03_Functions/03_functions.html" />
         <option value="$PROJECT_DIR$/03_Functions/exercises.html" />
         <option value="$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/journal.js" />
-        <option value="$PROJECT_DIR$/list of functions" />
         <option value="$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/Chapter_4_Data_Structures:_Objects_and_Arrays.html" />
         <option value="$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/Exercises.html" />
+        <option value="$PROJECT_DIR$/05_Higher-Order_Functions/scripts.js" />
+        <option value="$PROJECT_DIR$/list of functions" />
+        <option value="$PROJECT_DIR$/05_Higher-Order_Functions/05_Higher-Order_Functions.html" />
       </list>
     </option>
   </component>
@@ -110,7 +101,7 @@
     <option name="x" value="49" />
     <option name="y" value="25" />
     <option name="width" value="936" />
-    <option name="height" value="1055" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -127,22 +118,7 @@
             <path>
               <item name="book_eloquent_js" type="b2602c69:ProjectViewProjectNode" />
               <item name="book_eloquent_js" type="462c0819:PsiDirectoryNode" />
-              <item name="01_Values_Types_and_Operators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="book_eloquent_js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_eloquent_js" type="462c0819:PsiDirectoryNode" />
-              <item name="02_Program_Structure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="book_eloquent_js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_eloquent_js" type="462c0819:PsiDirectoryNode" />
-              <item name="03_Functions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="book_eloquent_js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="book_eloquent_js" type="462c0819:PsiDirectoryNode" />
-              <item name="04_Data_Structures:_Objects_and_Arrays" type="462c0819:PsiDirectoryNode" />
+              <item name="05_Higher-Order_Functions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="book_eloquent_js" type="b2602c69:ProjectViewProjectNode" />
@@ -208,18 +184,22 @@
       <workItem from="1576750775411" duration="14821000" />
       <workItem from="1576824863007" duration="24912000" />
       <workItem from="1577090873021" duration="12132000" />
-      <workItem from="1577104904157" duration="11601000" />
+      <workItem from="1577104904157" duration="11865000" />
+      <workItem from="1577346430514" duration="22108000" />
+      <workItem from="1577432240519" duration="15420000" />
+      <workItem from="1577697101007" duration="15665000" />
+      <workItem from="1577778277284" duration="5103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164122000" />
+    <option name="totallyTimeSpent" value="222682000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="25" width="936" height="1055" extended-state="4" />
+    <frame x="49" y="25" width="936" height="1053" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1490411" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21910113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -321,29 +301,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/03_Functions/03_functions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="192" column="3" lean-forward="true" selection-start-line="192" selection-start-column="3" selection-end-line="202" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/list of functions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/Chapter_4_Data_Structures:_Objects_and_Arrays.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="245" lean-forward="true" selection-start-line="245" selection-end-line="245" />
+        <state relative-caret-position="-1453">
+          <caret line="192" column="3" selection-start-line="192" selection-start-column="3" selection-end-line="202" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/Exercises.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="238" column="46" selection-start-line="238" selection-start-column="46" selection-end-line="238" selection-end-column="46" />
+        <state relative-caret-position="232">
+          <caret line="254" column="22" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_Data_Structures:_Objects_and_Arrays/Chapter_4_Data_Structures:_Objects_and_Arrays.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="259" lean-forward="true" selection-start-line="259" selection-end-line="259" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/list of functions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05_Higher-Order_Functions/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9036">
+          <caret line="502" column="25" selection-start-line="502" selection-start-column="25" selection-end-line="502" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05_Higher-Order_Functions/05_Higher-Order_Functions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="232" column="28" lean-forward="true" selection-start-line="232" selection-start-column="28" selection-end-line="232" selection-end-column="28" />
         </state>
       </provider>
     </entry>

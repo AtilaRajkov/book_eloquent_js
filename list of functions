@@ -60,6 +60,16 @@ array.indexOf()
 array.lastIndexOf()
 array1.concat(array2)
 
+Array.isArray(value1)
+
+.forEach()                 ["A", "B"].forEach(l => console.log(l));
+.filter()                  SCRIPTS.filter(s => s.direction === "ttb")
+.map()                     rtlScripts.map(s => s.name)
+.reduce()                  [1, 2, 3].reduce((a, b) => a + b, 0)
+
+.some()      method tests whether at least one element in the array passes
+            the test implemented by the provided function. It returns a Boolean value.
+
 
 
 
@@ -70,6 +80,12 @@ delete anObject.left;
 Object.keys(anObjectName)               // ["squirrel", "events", "wolf"]
 Object.assign(objectA, {b: 3, c: 4});
 
+
+
+/// ********************* JSON ********************************************************************************
+
+JSON.stringify()
+JSON.parse()
 
 
 

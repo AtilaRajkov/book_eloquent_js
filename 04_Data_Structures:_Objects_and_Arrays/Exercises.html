@@ -226,31 +226,41 @@
             two: "two"
         };
 
+        let value_1_keys = Object.keys(obj2);
+        let value_2_keys = Object.keys(obj2);
+
         function deepEqual(value1, value2) {
 
             if (typeof value1 === typeof value2) {
 
+                /// Array ///
+
+                /// Object ///
                 if (typeof value1 === "object") {
 
-                    // return deepEqual(Object.keys(value1), Object.keys(value2));
+                    // console.log("here 1!");
 
-                    console.log("here!");
+                    array_1 = Object.keys(value1);
+                    array_2 = Object.keys(value2);
 
-                    console.log(Object.keys(value1));
-                    console.log(Object.keys(value2));
-
-                    if (Object.keys(value1) == Object.keys(value2)) {
-                        console.log("here 3!");
-                        return "The Properties of the object are equal!";
+                    if (array_1.length !== array_2.length) {
+                        return "The arrays lengths are not equal.";
                     }
-                    console.log("here 2!");
+
+                    for (let i = 0; i < array_1.length; i++) {
+                        if (array_1[i] !== array_2[i]) {
+                            return "The keys are not equal.";
+                        }
+                        if (value1[array_1[i]] !== value2[array_2[i]]) {
+                            return "The values of the properties are not equal.";
+                        }
+                    }
+
+                    return "They are Equal!";
 
                 }
 
-                // if ( typeof value1 === array) {
-                //     return "Array!";
-                // }
-
+                /// The rest... ///
                 if (value1 === value2) {
                     return true;
                 }
@@ -262,8 +272,16 @@
         }
 
         console.log(deepEqual(obj1, obj2));
+        // console.log(deepEqual(value_1_keys, value_2_keys));
+        console.log(deepEqual([1, 2, 3], [1, 2, 3]));
+        console.log(deepEqual([1, 2, 3], "1, 2, 3"));
         // console.log(deepEqual("2", "2"));
         // console.log(deepEqual("2", 2));
+
+        console.log(JSON.stringify(obj1) === JSON.stringify(obj2));
+        console.log(JSON.stringify(obj2));
+
+
 
 
 </script>
